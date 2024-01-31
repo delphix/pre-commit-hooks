@@ -4,5 +4,4 @@ Currently hosting:
 
 1. check-version-bumped - A hook to verify a python package's version
                           has been bumped if changes exist.
-2. only-module-imports  - A hook to verify only modules are imported.
-3. copyright-checker    - A hook to check file copyrights are up-to-date.
+2. copyright-checker    - A hook to check file copyrights are up-to-date.

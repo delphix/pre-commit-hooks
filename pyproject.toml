@@ -4,12 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "custom_hooks"
-version = "1.0.4"
+version = "1.1.0"
 description = "Custom pre-commit hooks"
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
-    "astroid",
     "gitpython"
 ]
 
@@ -24,4 +23,3 @@ dev = [
 [project.scripts]
 check-version-bumped = "custom_hooks.check_version_bumped:main"
 copyright-checker = "custom_hooks.copyright_checker:main"
-only-module-imports = "custom_hooks.only_module_imports:main"
