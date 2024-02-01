@@ -1,13 +1,20 @@
--   id: check-version-bumped
-    name: check-version-bumped
-    description: Check if version has been bumped.
-    entry: check-version-bumped
-    language: python
-    types: [python]
-    require_serial: true
+- id: "check-version-bumped"
+  name: "check-version-bumped"
+  description: "Check if version has been bumped."
+  entry: "check-version-bumped"
+  language: "python"
+  types: ["python"]
+  require_serial: true
 
--   id: copyright-check
-    name: copyright-check
-    description: Check if copyrights are updated.
-    entry: copyright-checker
-    language: python
+- id: "copyright-check"
+  name: "copyright-check"
+  description: "Check if copyrights are updated."
+  entry: "copyright-checker"
+  language: "python"
+
+- id: "nested-hook"
+  name: "nested-hook"
+  description: "pre-commit-hook to run other pre-commit-hooks in nested directories"
+  entry: "src/custom_hooks/nested_hook.py"
+  language: "script"
+  require_serial: true
