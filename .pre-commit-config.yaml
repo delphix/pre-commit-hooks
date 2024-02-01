@@ -37,6 +37,6 @@ repos:
     hooks:
       - id: unit-tests
         name: unit-tests
-        entry: tox
+        entry: tox -e py3
         language: system
         pass_filenames: false
