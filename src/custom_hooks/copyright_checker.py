@@ -209,13 +209,10 @@ def check_copyright(
         should_check = False
         if not author_year:
             should_check = True
-            print(f"File is not yet in git: {filename}")
         elif author_year == curr_year:
             should_check = True
-            print(f"File was updated this year: {filename}")
         elif file_staged(repo, filename):
             should_check = True
-            print(f"File is staged to be committed: {filename}")
 
         if should_check and last_year < curr_year:
             #
