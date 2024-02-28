@@ -5,11 +5,15 @@ from __future__ import annotations
 
 import argparse
 import datetime
+import logging
 import os
 import re
 import typing
 
 import git
+
+logger = logging.getLogger(__name__)
+
 
 COPYRIGHT = "Copyright (c) {year} by {owner}. All rights reserved."
 
@@ -209,10 +213,13 @@ def check_copyright(
         should_check = False
         if not author_year:
             should_check = True
+            logger.info(f"File is not yet in git: {filename}")
         elif author_year == curr_year:
             should_check = True
+            logger.info(f"File was updated this year: {filename}")
         elif file_staged(repo, filename):
             should_check = True
+            logger.info(f"File is staged to be committed: {filename}")
 
         if should_check and last_year < curr_year:
             #
